@@ -1,0 +1,5 @@
+﻿@using PluggableMvc;
+@foreach (var plugin in DependencyResolver.Current.GetServices<IMvcPlugin>())
+{
+		<li>@Html.ActionLink(plugin.DisplayName, plugin.DefaultActionName, plugin.DefaultControllerName)</li>
+}
